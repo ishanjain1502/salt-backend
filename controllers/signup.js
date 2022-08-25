@@ -38,8 +38,6 @@ const signup = async (req, res) => {
       else{
         console.log(err);
       }
-  
-      
     }
   };
   
