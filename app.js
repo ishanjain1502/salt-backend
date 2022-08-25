@@ -1,17 +1,17 @@
-import express from "express";
-import cors from "cors";
+const express = require('express')
+const cors = require('cors')
 const morgan = require("morgan");
-
+const db = require('./database/mongo_db')
 require("dotenv").config();
 
-import bodyparser from "body-parser";
+const router = require("./routes/api");
 
 const api = require("./routes/api.js");
 const app = express();
-
+db();
 app.use(cors());
 
-app.use(bodyparser.json());
+app.use(express.json());
 
 
 app.use("/api", api);
@@ -38,10 +38,10 @@ app.use("/api", (req, res) => {
 
 app.use((req, res) => {
   res.status(404).json({
-    name: "GraySwipe RESTful API",
+    name: "Salt assignment RESTful API",
     version: "1.0.0",
     status: "200: OK",
     health: "RUNNING",
-    mode: "STAGING",
+    mode: "assignment",
   });
 });

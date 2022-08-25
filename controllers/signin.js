@@ -1,18 +1,19 @@
 const bcrypt = require("bcrypt");
-const User = require("../../models/user.model");
+const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 
 const signin = async (req, res) => {
-  const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({
+       email : req.body.email 
+      });
     if (!user) {
       res.status(404).json({ message: "User not found" });
       return;
     }
 
-    if (await bcrypt.compare(password, user.password)) {
+    if (await bcrypt.compare(req.body.password, user.password)) {
       const { username, email, _id: user_id } = user;
       
       const token = jwt.sign(
