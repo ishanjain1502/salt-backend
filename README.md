@@ -3,84 +3,84 @@ Assignment for Salt backend
 
 LLD for signup
 
-what we need ?
-username,email,password
-Endpoint: /api/v1/signup
-Method : POST
-Request
-Body:{
-“usename”:”string”,
-“email”:”string”,
-“password”:”string”
-}
-Response 
-Status:200
-Body:
-{
-“message”:”user created successfully”,
-“token”:”string”
-}
-Status:409
-Body:
-{
-“message”:”Email already exists”
-}
-Status:409
-Body:{
-“message”:”Username already exists”
-}
+what we need ? <br/>
+username,email,password<br/>
+Endpoint: /api/v1/signup<br/>
+Method : POST<br/>
+Request <br/>
+Body:{  <br/>
+“usename”:”string”, <br/>
+“email”:”string”, <br/>
+“password”:”string” <br/>
+} <br/>
+Response  <br/>
+Status:200 <br/>
+Body: <br/>
+{ <br/>
+“message”:”user created successfully”, <br/>
+“token”:”string” <br/>
+} <br/>
+Status:409 <br/>
+Body: <br/>
+{ <br/>
+“message”:”Email already exists” <br/>
+} <br/>
+Status:409 <br/>
+Body:{ <br/>
+“message”:”Username already exists” <br/>
+} <br/>
 
 
 <br/><br/>
 
 LLD for signin:
+ <br/> <br/>
+what we need ? <br/>
+email,password <br/>
+ <br/>
+Endpoint : api/v1/signin <br/>
+ <br/> 
+Method : POST <br/> <br/>
 
-what we need ?
-email,password
+Request <br/> 
 
-Endpoint : api/v1/signin
+Body: <br/>
 
-Method : POST
+{ <br/>
 
-Request
+“email”:”string”, <br/>
 
-Body:
+“password”:”string” <br/>
 
-{
+} <br/>
 
-“email”:”string”,
+Response: <br/>
 
-“password”:”string”
+Status: 200 <br/>
 
-}
+Body: <br/>
 
-Response:
-
-Status: 200
-
-Body:
-
-{
+{ <br/>
 
 “message”:”user signed in successfully”,
+ <br/>
+“token”:”string” <br/>
 
-“token”:”string”
+} <br/>
 
-}
+Status: 404 <br/>
 
-Status: 404
+Body: <br/>
 
-Body:
+{ <br/>
 
-{
+“message”:”User not found” <br/>
 
-“message”:”User not found”
+} <br/>
 
-}
+Status: 400 <br/>
 
-Status: 400
-
-{
-“message”:”Incorrect Password”
-}
+{ <br/>
+“message”:”Incorrect Password” <br/>
+} <br/>
 
