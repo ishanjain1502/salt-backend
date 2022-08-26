@@ -5,7 +5,7 @@ const router = express.Router();
 const signup = require("./signup");
 const signin = require("./signin");
 
-router.use("/v1/signup", signup);
-router.use("/v1/signin", signin);
+router.use("/signup", signup);
+router.use("/signin", signin);
 
 module.exports = router;

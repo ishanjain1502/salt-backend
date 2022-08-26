@@ -14,10 +14,10 @@ app.use(cors());
 const bodyparser = require("body-parser");
 app.use(bodyparser.json());
 
-app.use("/api", api);
+app.use("/api/v1", api);
 
 
-
+ 
 // app.use(morgan('dev'));
 
 const PORT = process.env.PORT || 1337;
@@ -26,14 +26,11 @@ app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
 
-
+// sndlskdlskndlksdnf
 
 app.use((req, res) => {
   res.status(404).json({
     name: "Salt assignment RESTful API",
-    version: "1.0.0",
-    status: "200: OK",
-    health: "RUNNING",
-    mode: "assignment",
+    message: "NOT FOUND"
   });
 });
