@@ -14,8 +14,8 @@ const bodyparser = require("body-parser");
 app.use(bodyparser.json());
 
 
-
- 
+app.use(express.json())
+app.use('/api/v1' , router) 
 // app.use(morgan('dev'));
 
 const PORT = process.env.PORT || 1337;
