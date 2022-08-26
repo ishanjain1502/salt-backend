@@ -11,8 +11,8 @@ const app = express();
 db();
 app.use(cors());
 
-app.use(express.json());
-
+const bodyparser = require("body-parser");
+app.use(bodyparser.json());
 
 app.use("/api", api);
 
@@ -26,15 +26,7 @@ app.listen(PORT, () => {
   console.log(`server is running on port ${PORT}`);
 });
 
-app.use("/api/v1", router);
 
-app.use("/api/v1", (req, res) => {
-  res.status(404).json({ message: "please, specify a valid endpoint." });
-});
-
-app.use("/api", (req, res) => {
-  res.status(404).json({ message: "please, specify an API version." });
-});
 
 app.use((req, res) => {
   res.status(404).json({
